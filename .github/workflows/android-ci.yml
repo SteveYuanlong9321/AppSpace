@@ -1,0 +1,59 @@
+name: Android build check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "gradle/**"
+      - "build.gradle.kts"
+      - "settings.gradle.kts"
+      - "gradle.properties"
+      - "gradlew"
+      - ".github/workflows/android-ci.yml"
+  pull_request:
+    paths:
+      - "app/**"
+      - "gradle/**"
+      - "build.gradle.kts"
+      - "settings.gradle.kts"
+      - "gradle.properties"
+      - "gradlew"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses
+      - name: Install Android API 37 platform
+        run: sdkmanager "platforms;android-37" "build-tools;36.0.0"
+      - name: Build and run unit tests
+        run: |
+          chmod +x ./gradlew
+          ./gradlew --no-daemon clean testDebugUnitTest assembleDebug
+      - name: Upload debug APK for verification
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: appspace-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14
