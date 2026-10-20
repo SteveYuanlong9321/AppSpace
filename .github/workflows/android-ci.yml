@@ -10,7 +10,6 @@ on:
       - "settings.gradle.kts"
       - "gradle.properties"
       - "gradlew"
-      - ".github/workflows/android-ci.yml"
   pull_request:
     paths:
       - "app/**"
