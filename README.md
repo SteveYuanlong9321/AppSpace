@@ -6,9 +6,9 @@ AppSpace 是一个面向 Android 的多来源应用发现与管理应用，目�
 
 ## 当前状态
 
-AppSpace 1.0 正在准备公开发布。当前已在开发版本中接入 F-Droid、GitHub Releases、华为 AppGallery、vivo 应用商店和 Uptodown；不同来源的搜索覆盖率、元数据与安装行为仍需要按设备和应用逐项验证。三星 Galaxy Store 已从项目中移除。
+AppSpace 1.0 正在准备公开发布。当前开发版本已接入 F-Droid、GitHub Releases、华为 AppGallery、vivo 应用商店和 Uptodown；不同来源的搜索覆盖率、元数据与安装行为仍需要按设备和应用逐项验证。三星 Galaxy Store 已从项目中移除。
 
-此仓库目前正在整理完整 Android Studio 工程、构建流程与首个正式 Release。网站与发布说明不会把尚未上传或验证的构建产物标记为已发布。
+官网源码、GitHub Pages 工作流、Android CI 工作流和项目上传脚本已经提交。**完整 Android Studio 工程与正式 APK 尚未上传/发布**；请不要将准备工作流视为已通过构建或正式发布。
 
 ## 核心目标
 
@@ -23,7 +23,7 @@ AppSpace 1.0 正在准备公开发布。当前已在开发版本中接入 F-Droi
 - F-Droid
 - GitHub Releases
 - Huawei AppGallery
-- Vivo App Store
+- vivo App Store
 - Uptodown
 
 这些来源的匿名接口可能变化，某个来源的搜索或下载失败不代表其他来源不可用。搜索结果也不保证每个应用都有可用安装包。
@@ -32,23 +32,28 @@ AppSpace 1.0 正在准备公开发布。当前已在开发版本中接入 F-Droi
 
 AppSpace 的 Android 安装能力可能使用 Android 系统安装界面，也提供实验性的 Shizuku 辅助流程。Shizuku 需要用户在设备上主动配置与授权；项目不会保证它能绕过设备厂商或 Android 系统施加的所有限制。
 
-首次公开发布之前，需要验证：
-- Android Studio / Gradle 构建通过；
-- 在目标 Android 版本上完成安装、搜索、下载、取消、安装失败及成功后的行为检查；
-- 确认 APK 签名与 Release 校验信息；
-- 为权限、隐私和第三方来源行为提供清楚说明。
+正式发布前需要完成：干净检出构建、真实设备回归、签名/包名确认、安装权限与隐私说明核对。
 
 ## 隐私与安全
 
 - 搜索会向所选数据源发送关键词或应用标识。
 - 下载会连接应用来源或它提供的下载 CDN。
 - 请只安装信任来源的 APK，并核对开发者、包名与签名。
-- 请勿向 GitHub 提交 `local.properties`、密钥库、`key.properties`、访问令牌、密码或个人下载记录。
-- 详细的使用说明与隐私信息请查看[项目网站](https://steveyuanlong9321.github.io/AppSpace/)。
+- 请勿提交 `local.properties`、密钥库、`key.properties`、访问令牌、密码或个人下载记录。
+- 详细信息请查看[项目网站](https://steveyuanlong9321.github.io/AppSpace/)。
+
+## 网站、发布与源码上传
+
+- [发布说明与启用 GitHub Pages 的步骤](docs/PUBLISHING.md)
+- [将本机完整 Android Studio 工程安全上传到仓库的脚本](tools/publish-android-project.ps1)
+- [网站部署工作流](.github/workflows/pages.yml)
+- [Android 构建检查工作流](.github/workflows/android-ci.yml)
+
+仓库最初只有 README。请从包含 `settings.gradle.kts` 和 `app/` 目录的完整 Android Studio 项目根目录运行上传脚本。脚本会保留官网文件，并排除本机配置、签名密钥与构建产物；它会在推送前列出待提交文件并请求确认。
 
 ## 反馈
 
-请通过 [GitHub Issues](https://github.com/SteveYuanlong9321/AppSpace/issues) 报告问题。建议提供设备型号、Android 版本、AppSpace 版本、所用应用来源和复现步骤；分享日志前请移除令牌、账号及其他私人信息。
+请通过 [GitHub Issues](https://github.com/SteveYuanlong9321/AppSpace/issues) 报告问题。建议提供设备型号、Android 版本、AppSpace 版本、所用数据源与复现步骤；分享日志前请移除令牌、账号及其他私人信息。
 
 ## English
 
