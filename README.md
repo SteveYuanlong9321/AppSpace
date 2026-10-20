@@ -23,7 +23,7 @@ AppSpace 1.0 正在准备公开发布。当前已在开发版本中接入 F-Droi
 - F-Droid
 - GitHub Releases
 - Huawei AppGallery
-- vivo App Store
+- Vivo App Store
 - Uptodown
 
 这些来源的匿名接口可能变化，某个来源的搜索或下载失败不代表其他来源不可用。搜索结果也不保证每个应用都有可用安装包。
