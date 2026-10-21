@@ -1721,11 +1721,18 @@ private fun GithubAppDetailPage(
 
     fun queueGithubAsset(release: GithubRelease, asset: GithubReleaseAsset) {
         downloadProgress = 0f
-        downloadStatus = "正在加入下载队列…"
+        downloadStatus = "等待确认第三方 APK 下载…"
         downloadFinished = false
         installerLaunched = false
-        downloadId = enqueueGithubApkDownload(context, app, release, asset)
-        if (downloadId == null) downloadStatus = "无法开始下载，请稍后重试"
+        showExternalApkDownloadConsent(
+            context = context,
+            sourceName = "GitHub Releases",
+            onContinue = {
+                downloadId = enqueueGithubApkDownload(context, app, release, asset)
+                if (downloadId == null) downloadStatus = "无法开始下载，请稍后重试"
+            },
+            onCancel = { downloadStatus = "已取消从 GitHub Releases 下载 APK" }
+        )
     }
 
     fun chooseOrQueue(release: GithubRelease) {
@@ -1990,6 +1997,25 @@ private fun GithubAppDetailPage(
     }
 }
 
+private fun showExternalApkDownloadConsent(
+    context: Context,
+    sourceName: String,
+    onContinue: () -> Unit,
+    onCancel: () -> Unit
+) {
+    android.app.AlertDialog.Builder(context)
+        .setTitle("下载来自 F-Droid 以外的 APK？")
+        .setMessage(
+            "这个安装包来自 $sourceName，不属于当前 F-Droid 仓库。F-Droid 未审核或从源码构建此 APK。" +
+                "继续下载意味着你选择绕过 F-Droid 对该安装包的检查。请先确认来源和开发者可信；" +
+                "你也可以取消并使用 F-Droid 官方仓库中的版本。"
+        )
+        .setNegativeButton("取消下载") { _, _ -> onCancel() }
+        .setPositiveButton("继续下载") { _, _ -> onContinue() }
+        .setOnCancelListener { onCancel() }
+        .show()
+}
+
 private fun enqueueGithubApkDownload(
     context: Context,
     app: FdroidApp,
@@ -2060,6 +2086,20 @@ private fun StoreAppDetailPage(
     }
 
     fun enqueueStoreDownload(info: StoreAppDetails) {
+        val uri = runCatching { Uri.parse(info.downloadUrl) }.getOrNull()
+        if (uri == null || uri.scheme != "https" || info.downloadUrl.isBlank()) {
+            downloadStatus = "商店没有提供可用的 HTTPS 安装包链接。"
+            return
+        }
+        showExternalApkDownloadConsent(
+            context = context,
+            sourceName = app.source.displayName,
+            onContinue = { startStoreDownload(info) },
+            onCancel = { downloadStatus = "已取消从 ${app.source.displayName} 下载 APK" }
+        )
+    }
+
+    fun startStoreDownload(info: StoreAppDetails) {
         val uri = runCatching { Uri.parse(info.downloadUrl) }.getOrNull()
         if (uri == null || uri.scheme != "https" || info.downloadUrl.isBlank()) {
             downloadStatus = "商店没有提供可用的 HTTPS 安装包链接。"
