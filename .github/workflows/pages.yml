@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "github-pages"
+  group: "appspace-actions-pages"
   cancel-in-progress: true
 
 jobs:
