@@ -4,266 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0a10">
-  <meta name="description" content="AppSpace 应用空间：聚合搜索多个来源的 Android 应用，查看应用详情并选择可用下载渠道。">
-  <meta property="og:title" content="AppSpace · 应用空间">
-  <meta property="og:description" content="一个搜索入口，多种 Android 应用来源。">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="https://steveyuanlong9321.github.io/AppSpace/">
-  <link rel="icon" type="image/webp" href="./assets/appspace-icon.webp?v=1.0">
-  <link rel="apple-touch-icon" href="./assets/appspace-icon.webp?v=1.0">
+  <meta name="description" content="AppSpace · 应用空间：在一个界面中搜索多个 Android 应用来源，查看应用信息并选择下载渠道。">
+  <meta name="site-build" content="1.0.1">
   <title>AppSpace · 应用空间</title>
-  <style>
-    :root {
-      --bg: #0b0a10;
-      --text: #f7f3ff;
-      --muted: #9992a7;
-      --line: rgba(255, 255, 255, 0.11);
-      --gradient: linear-gradient(115deg, #6b7cff 0%, #a86bff 52%, #ff9a76 100%);
-      --panel: rgba(255, 255, 255, 0.035);
-    }
-    * { box-sizing: border-box; }
-    html, body { min-width: 320px; min-height: 100%; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at 50% 28%, rgba(168, 107, 255, 0.14), transparent 28rem),
-        radial-gradient(circle at 78% 78%, rgba(255, 154, 118, 0.09), transparent 25rem),
-        radial-gradient(circle at 16% 66%, rgba(107, 124, 255, 0.08), transparent 22rem),
-        var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible { outline: 3px solid #92e8e0; outline-offset: 4px; }
-    .site {
-      width: min(1400px, calc(100% - 34px));
-      min-height: 100svh;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      padding: 24px 0 max(24px, env(safe-area-inset-bottom));
-    }
-    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
-    .brand {
-      font-size: clamp(31px, 5vw, 42px);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.06em;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .author-button, .version {
-      padding: 7px 13px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.035);
-      color: #aaa3b7;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .author-button { transition: transform 160ms ease, background 160ms ease, border-color 160ms ease; }
-    .author-button:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.055); border-color: rgba(255, 255, 255, 0.17); }
-    .hero {
-      position: relative;
-      width: min(1100px, 100%);
-      margin: auto;
-      padding: 7vh 0 8vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .hero-aura {
-      position: absolute;
-      top: 26%;
-      left: 50%;
-      width: min(560px, 82vw);
-      aspect-ratio: 1;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(168,107,255,.18), rgba(107,124,255,.07) 36%, transparent 70%);
-      filter: blur(12px);
-      pointer-events: none;
-      z-index: -1;
-    }
-    .app-icon-wrap {
-      width: clamp(150px, 22vw, 210px);
-      aspect-ratio: 1;
-      margin-bottom: 28px;
-      border-radius: 28%;
-      box-shadow: 0 28px 70px rgba(118,93,255,.18), 0 0 90px rgba(187,112,255,.08);
-      overflow: hidden;
-    }
-    .app-icon { display: block; width: 100%; height: 100%; object-fit: contain; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 7px 11px 6px;
-      border: 1px solid rgba(168,107,255,.2);
-      border-radius: 999px;
-      background: rgba(168,107,255,.045);
-      color: #c0a8f5;
-      font-size: 10px;
-      font-weight: 750;
-      letter-spacing: .18em;
-    }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: #92e8e0; box-shadow: 0 0 16px #92e8e0; }
-    h1 {
-      margin: 19px 0 13px;
-      font-size: clamp(45px, 8vw, 78px);
-      line-height: .99;
-      letter-spacing: -.068em;
-      font-weight: 820;
-    }
-    h1 span { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .intro { max-width: 620px; margin: 0; color: var(--muted); font-size: clamp(14px, 2.2vw, 17px); line-height: 1.8; }
-    .actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .btn {
-      padding: 12px 18px;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-    }
-    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.25); }
-    .btn.primary { background: linear-gradient(115deg, #eee5ff, #d9f3ef); color: #17121f; border: 0; }
-    .btn svg { width: 17px; height: 17px; flex: none; }
-    .source-pills { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
-    .source-pills span { font-size: 11px; border-radius: 8px; background: rgba(255,255,255,.035); border: 1px solid var(--line); color: #c3bacf; padding: 6px 10px; }
-    .feature-grid { width: min(980px, 100%); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 auto 38px; }
-    .feature {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-      background: linear-gradient(160deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
-    }
-    .feature-mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: rgba(168,107,255,.1);
-      color: #c8b3ff;
-      font-size: 18px;
-      margin-bottom: 14px;
-    }
-    .feature h2 { margin: 0 0 7px; font-size: 16px; letter-spacing: -.025em; }
-    .feature p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
-    .notice { width: min(980px, 100%); margin: 0 auto; padding: 15px 18px; border: 1px solid rgba(168,107,255,.17); border-radius: 14px; background: rgba(168,107,255,.045); color: var(--muted); font-size: 12px; line-height: 1.8; }
-    .site-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px 20px;
-      padding-top: 30px;
-      color: #6f687b;
-      font-size: 12px;
-    }
-    .site-footer-links { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .site-footer a { color: #9d95a9; }
-    .site-footer a:hover { color: var(--text); }
-    @media (max-width: 760px) {
-      .hero { padding: 6vh 0 6vh; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .feature { padding: 18px; }
-    }
-    @media (max-width: 520px) {
-      .site { width: min(100% - 24px, 520px); padding-top: 16px; }
-      .brand { font-size: 30px; }
-      .site-header { align-items: flex-start; }
-      .header-actions { gap: 7px; }
-      .version { display: none; }
-      .app-icon-wrap { width: 152px; margin-bottom: 25px; }
-      h1 { font-size: 43px; }
-      .intro { max-width: 350px; font-size: 14px; }
-      .actions { width: 100%; gap: 10px; }
-      .btn { min-height: 43px; padding: 11px 14px; font-size: 12px; }
-      .source-pills { gap: 6px; }
-      .source-pills span { font-size: 10px; }
-      .site-footer { align-items: flex-start; flex-direction: column; padding-top: 24px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
-    }
-  </style>
+  <link rel="icon" type="image/webp" href="./assets/appspace-icon.webp?v=1.0.1">
+  <link rel="stylesheet" href="./style.css?v=1.0.1">
 </head>
 <body>
-  <main class="site" id="top">
+  <main class="site">
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="AppSpace 首页">AppSpace</a>
+      <a class="brand" href="./" aria-label="AppSpace 首页">AppSpace</a>
       <div class="header-actions">
         <a class="author-button" href="https://steve0309.dpdns.org/">Steve 的小站</a>
-        <span class="version">VERSION 1.0</span>
+        <span class="version">1.0</span>
       </div>
     </header>
 
-    <section class="hero" aria-labelledby="page-title">
+    <section class="hero">
       <div class="hero-aura" aria-hidden="true"></div>
+
       <div class="app-icon-wrap">
-        <img class="app-icon" src="./assets/appspace-icon.webp?v=1.0" alt="AppSpace 应用图标" width="210" height="210">
+        <img class="app-icon" src="./assets/appspace-icon.webp?v=1.0.1" alt="AppSpace 应用图标">
       </div>
-      <div class="eyebrow"><span class="dot"></span> ANDROID · MULTI-SOURCE APP DISCOVERY</div>
-      <h1 id="page-title">发现应用，<br><span>不必切换世界。</span></h1>
-      <p class="intro">一个搜索入口，多种 Android 应用来源。用 AppSpace 搜索应用、查看详情与可用版本，并为同一个应用选择适合自己的下载渠道。</p>
-      <div class="actions">
-        <a class="btn primary" href="https://github.com/SteveYuanlong9321/AppSpace/releases" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          查看下载与版本
+
+      <div class="eyebrow">APPSPACE FOR ANDROID</div>
+
+      <h1>发现应用，<span>不止一个来源</span></h1>
+
+      <p class="intro">
+        一个搜索入口，多种 Android 应用来源。搜索应用、查看详情与可用版本，再为同一个应用选择适合自己的下载渠道。
+      </p>
+
+      <div class="download-links">
+        <a class="release-link" href="https://github.com/SteveYuanlong9321/AppSpace/releases" target="_blank" rel="noopener noreferrer" aria-label="Download on GitHub Releases">
+          <img class="release-badge" src="./assets/github-releases-badge.png?v=1.0.1" alt="Download on GitHub Releases">
         </a>
-        <a class="btn" href="https://github.com/SteveYuanlong9321/AppSpace" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.04c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.56 0c2.1-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3.01 0 4.29-2.62 5.23-5.12 5.51.4.35.76 1.03.76 2.08V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"/></svg>
-          查看源码
+
+        <a class="release-link" href="https://steve0309.dpdns.org/fdroid/repo" target="_blank" rel="noopener noreferrer" aria-label="Get it from Steve's F-Droid repository">
+          <img class="release-badge" src="./assets/fdroid-badge.png?v=1.0.1" alt="Get it on F-Droid">
         </a>
-        <a class="btn" href="https://steve0309.dpdns.org/fdroid/repo" target="_blank" rel="noopener noreferrer">个人 F-Droid 仓库 ↗</a>
       </div>
-      <div class="source-pills" aria-label="支持的应用来源">
-        <span>F-Droid</span>
-        <span>GitHub Releases</span>
-        <span>Huawei AppGallery</span>
-        <span>vivo App Store</span>
-        <span>Uptodown</span>
+
+      <div class="hero-meta">
+        <span>Android 8.0+</span>
+        <span class="meta-dot"></span>
+        <span>Version 1.0</span>
+        <span class="meta-dot"></span>
+        <a href="https://github.com/SteveYuanlong9321/AppSpace" target="_blank" rel="noopener noreferrer">Open Source</a>
       </div>
     </section>
-
-    <section class="feature-grid" aria-label="AppSpace 的主要功能">
-      <article class="feature">
-        <div class="feature-mark" aria-hidden="true">⌕</div>
-        <h2>多来源搜索</h2>
-        <p>将多个第三方目录的搜索结果放到同一个界面，并在可用信息范围内按相关性排序。</p>
-      </article>
-      <article class="feature">
-        <div class="feature-mark" aria-hidden="true">▤</div>
-        <h2>统一应用详情</h2>
-        <p>集中查看应用信息、版本与截图链接，并在可识别的情况下比较同一应用的下载来源。</p>
-      </article>
-      <article class="feature">
-        <div class="feature-mark" aria-hidden="true">↗</div>
-        <h2>来源选择透明</h2>
-        <p>下载时明确选择来源，再交由 Android 系统处理常规安装流程。</p>
-      </article>
-    </section>
-
-    <aside class="notice">
-      <strong>使用提示：</strong> AppSpace 不要求注册或登录 AppSpace 账号。搜索和详情请求会访问相应第三方服务，来源和下载链接可能变化。安装前请核对应用名称、开发者、包名与来源。页面上的个人 F-Droid 仓库是 Steve 维护的独立仓库，并非 F-Droid 官方主仓库。
-    </aside>
 
     <footer class="site-footer">
-      <span>© 2026 AppSpace · 应用空间</span>
+      <span>AppSpace · 应用空间</span>
       <div class="site-footer-links">
-        <a href="https://steve0309.dpdns.org/">Steve 的小站</a>
-        <a href="https://github.com/SteveYuanlong9321/AppSpace/issues" target="_blank" rel="noopener noreferrer">反馈问题 ↗</a>
-        <a href="https://github.com/SteveYuanlong9321/AppSpace" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://github.com/SteveYuanlong9321/AppSpace/issues" target="_blank" rel="noopener noreferrer">Feedback / Issues</a>
+        <a href="https://github.com/SteveYuanlong9321/AppSpace" target="_blank" rel="noopener noreferrer">Source Code</a>
       </div>
     </footer>
   </main>
