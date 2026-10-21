@@ -8,7 +8,7 @@ AppSpace 是一个面向 Android 的多来源应用发现与管理应用，目�
 
 AppSpace 1.0 正在准备公开发布。当前开发版本已接入 F-Droid、GitHub Releases、华为 AppGallery、vivo 应用商店和 Uptodown；不同来源的搜索覆盖率、元数据与安装行为仍需要按设备和应用逐项验证。三星 Galaxy Store 已从项目中移除。
 
-官网源码与 GitHub Pages 工作流已提交。完整 Android Studio 工程现已按 Gradle 项目结构放入仓库。GitHub Releases 中已有 AppSpace 1.0 的 APK 草稿资产，但 Release 仍未正式发布。Android 构建尚未验证成功；由于之前的工作流在 Android SDK 初始化阶段失败，自动触发已暂时暂停，修复 SDK 配置后再手动运行构建检查。
+官网源码与 GitHub Pages 工作流已提交。当前已收到的 Android 源码、Manifest、Gradle 配置和核心资源现已按 Gradle 项目结构放入仓库；目前只整理入库了 xxxhdpi 图标变体，其他密度图标尚未恢复。GitHub Releases 中已有 AppSpace 1.0 的 APK 草稿资产，但 Release 仍未正式发布。Android 构建尚未验证成功；由于之前的工作流在 Android SDK 初始化阶段失败，自动触发已暂时暂停，修复 SDK 配置后再手动运行构建检查。
 
 ## 核心目标
 
