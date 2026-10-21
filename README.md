@@ -22,7 +22,7 @@
 - F-Droid
 - GitHub Releases
 - Huawei AppGallery（华为应用市场）
-- vivo App Store
+- Vivo App Store（Vivo应用商店）
 - Uptodown
 
 来源接口、元数据和下载链接由第三方服务维护，可能随时变化。某个来源暂时无法搜索或下载，不代表其他来源也不可用。搜索结果不保证每个应用都提供可下载的 APK，实际可用性也可能因地区、设备、应用或来源政策而不同。
