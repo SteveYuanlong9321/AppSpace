@@ -1,7 +1,7 @@
 name: Android build check
 
-# Automatic builds are temporarily disabled while the source tree is being organized.
-# Run manually from Actions after the SDK setup failure has been fixed.
+# Automatic builds remain disabled while F-Droid readiness and the first clean build are being verified.
+# Trigger manually from GitHub Actions when ready to validate the current source tree.
 on:
   workflow_dispatch:
 
