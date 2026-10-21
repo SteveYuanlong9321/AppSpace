@@ -1,10 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1038" height="346" viewBox="0 0 1038 346" role="img" aria-labelledby="title desc">
-<title id="title">Feedback and issue tracker</title><desc id="desc">Report bugs or suggest features on GitHub Issues.</desc>
-<rect x="3" y="3" width="1032" height="340" rx="38" fill="#121116" stroke="#34313b" stroke-width="6"/>
-<g transform="translate(48 80)" fill="none" stroke="#f0eafa" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
-<path d="M18 15h180a28 28 0 0 1 28 28v94a28 28 0 0 1-28 28h-91l-57 43v-43H18a28 28 0 0 1-28-28V43A28 28 0 0 1 18 15Z"/>
-<path d="M107 59v44M107 127v2"/>
+<title id="title">AppSpace feedback and issue tracker</title><desc id="desc">Report bugs or suggest features on GitHub Issues.</desc>
+<defs>
+ <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".14" stop-color="#a5a5a5"/><stop offset=".36" stop-color="#f8f8f8"/><stop offset=".72" stop-color="#666"/><stop offset="1" stop-color="#e8e8e8"/></linearGradient>
+ <linearGradient id="black" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#090909"/><stop offset=".55" stop-color="#000"/><stop offset="1" stop-color="#141414"/></linearGradient>
+ <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect x="2" y="2" width="1034" height="342" rx="38" fill="url(#chrome)" stroke="#f3f3f3" stroke-width="2"/>
+<rect x="7" y="7" width="1024" height="332" rx="33" fill="url(#black)" stroke="#555" stroke-width="2"/>
+<path d="M18 44Q18 15 55 15H980Q1018 15 1018 52V120H18Z" fill="url(#shine)"/>
+<rect x="48" y="77" width="202" height="202" rx="51" fill="#f4f4f4"/>
+<g transform="translate(92 119)" fill="none" stroke="#050505" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M12 10h92a18 18 0 0 1 18 18v56a18 18 0 0 1-18 18H60l-35 27V102H12A18 18 0 0 1-6 84V28A18 18 0 0 1 12 10Z"/>
+ <path d="M59 34v25M59 76v2"/>
 </g>
-<text x="335" y="132" fill="#aaa4b4" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" letter-spacing="2">FEEDBACK &amp; SUPPORT</text>
-<text x="335" y="222" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="700">GitHub Issues</text>
+<text x="309" y="133" fill="#dedede" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="500" letter-spacing="1.4">FEEDBACK &amp; SUPPORT</text>
+<text x="309" y="220" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700" letter-spacing="-.7">Report an Issue</text>
+<text x="312" y="271" fill="#a7a7a7" font-family="Arial,Helvetica,sans-serif" font-size="23">Bug reports · Feature requests</text>
 </svg>

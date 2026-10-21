@@ -1,8 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1038" height="346" viewBox="0 0 1038 346" role="img" aria-labelledby="title desc">
-<title id="title">Steve's website</title><desc id="desc">Return to Steve's personal website.</desc>
-<rect x="3" y="3" width="1032" height="340" rx="38" fill="#121116" stroke="#34313b" stroke-width="6"/>
-<circle cx="161" cy="173" r="94" fill="#1c1925" stroke="#a98bff" stroke-width="7"/>
-<path d="M199 112c-15-12-32-17-54-17-40 0-65 23-65 54 0 29 20 42 57 49 25 5 33 10 33 21 0 11-11 19-29 19-22 0-40-8-59-22l-21 31c21 18 50 28 79 28 42 0 70-22 70-58 0-31-21-43-60-52-23-5-31-10-31-20 0-9 9-16 24-16 18 0 34 6 48 18Z" fill="#f7f3ff" transform="translate(10 -10) scale(.95)"/>
-<text x="335" y="132" fill="#aaa4b4" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" letter-spacing="2">MORE PROJECTS</text>
-<text x="335" y="222" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="700">Steve's Website</text>
+<title id="title">Steve's personal website</title><desc id="desc">Return to Steve's personal website and project list.</desc>
+<defs>
+ <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".14" stop-color="#a5a5a5"/><stop offset=".36" stop-color="#f8f8f8"/><stop offset=".72" stop-color="#666"/><stop offset="1" stop-color="#e8e8e8"/></linearGradient>
+ <linearGradient id="black" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#090909"/><stop offset=".55" stop-color="#000"/><stop offset="1" stop-color="#141414"/></linearGradient>
+ <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a98bff"/><stop offset="1" stop-color="#7ddbd4"/></linearGradient>
+</defs>
+<rect x="2" y="2" width="1034" height="342" rx="38" fill="url(#chrome)" stroke="#f3f3f3" stroke-width="2"/>
+<rect x="7" y="7" width="1024" height="332" rx="33" fill="url(#black)" stroke="#555" stroke-width="2"/>
+<path d="M18 44Q18 15 55 15H980Q1018 15 1018 52V120H18Z" fill="url(#shine)"/>
+<rect x="48" y="77" width="202" height="202" rx="51" fill="#f4f4f4"/>
+<circle cx="149" cy="178" r="71" fill="url(#orb)"/>
+<path d="M187 132c-12-9-24-13-40-13-29 0-47 17-47 39 0 21 15 31 42 36 18 4 24 8 24 15 0 8-8 14-21 14-16 0-29-6-43-16l-15 23c16 13 36 20 57 20 30 0 51-16 51-42 0-23-15-32-44-38-17-4-23-7-23-15 0-7 7-12 18-12 13 0 25 4 35 13Z" fill="#090909"/>
+<text x="309" y="133" fill="#dedede" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="500" letter-spacing="1.4">MORE ABOUT STEVE</text>
+<text x="309" y="220" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700" letter-spacing="-.7">Steve's Website</text>
+<text x="312" y="271" fill="#a7a7a7" font-family="Arial,Helvetica,sans-serif" font-size="23">Personal page · Projects</text>
 </svg>
