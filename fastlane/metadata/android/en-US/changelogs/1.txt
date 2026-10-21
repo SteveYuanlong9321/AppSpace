@@ -1,0 +1,5 @@
+Initial AppSpace 1.0 release.
+* Multi-source app search
+* Relevance-based result ranking
+* App details and source selection
+* Download and Android installation flow
