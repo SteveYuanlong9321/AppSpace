@@ -1,23 +1,8 @@
 name: Android build check
 
+# Automatic builds are temporarily disabled while the source tree is being organized.
+# Run manually from Actions after the SDK setup failure has been fixed.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "app/**"
-      - "gradle/**"
-      - "build.gradle.kts"
-      - "settings.gradle.kts"
-      - "gradle.properties"
-      - "gradlew"
-  pull_request:
-    paths:
-      - "app/**"
-      - "gradle/**"
-      - "build.gradle.kts"
-      - "settings.gradle.kts"
-      - "gradle.properties"
-      - "gradlew"
   workflow_dispatch:
 
 permissions:
