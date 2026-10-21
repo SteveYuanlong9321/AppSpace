@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="509" height="151" viewBox="0 0 509 151" role="img" aria-labelledby="title desc">
+<title id="title">Browse source code on GitHub</title><desc id="desc">Open the AppSpace GitHub repository.</desc>
+<rect x="2" y="2" width="505" height="147" rx="20" fill="#101014" stroke="#34313b" stroke-width="4"/>
+<g transform="translate(31 34)" fill="#f7f3ff">
+<path d="M31 0C13.9 0 0 13.9 0 31c0 13.7 8.9 25.3 21.2 29.4 1.6.3 2.1-.7 2.1-1.5v-5.3c-8.6 1.9-10.4-3.7-10.4-3.7-1.4-3.5-3.5-4.5-3.5-4.5-2.8-1.9.2-1.9.2-1.9 3.1.2 4.8 3.2 4.8 3.2 2.8 4.8 7.3 3.4 9.1 2.6.3-2 1.1-3.4 2-4.2-6.9-.8-14.1-3.5-14.1-15.3 0-3.4 1.2-6.1 3.2-8.3-.3-.8-1.4-4 .3-8.2 0 0 2.6-.8 8.5 3.2a29.4 29.4 0 0 1 15.5 0c5.9-4 8.5-3.2 8.5-3.2 1.7 4.2.6 7.4.3 8.2 2 2.2 3.2 4.9 3.2 8.3 0 11.8-7.2 14.5-14.1 15.3 1.1 1 2.1 2.9 2.1 5.8v8.6c0 .8.5 1.8 2.1 1.5C53.1 56.3 62 44.7 62 31 62 13.9 48.1 0 31 0Z" transform="scale(.92)"/>
+</g>
+<text x="116" y="59" fill="#a9a4b3" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="1">BROWSE SOURCE CODE</text>
+<text x="116" y="105" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700">GitHub Repository</text>
+</svg>

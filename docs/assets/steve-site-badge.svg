@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1038" height="346" viewBox="0 0 1038 346" role="img" aria-labelledby="title desc">
+<title id="title">Steve's website</title><desc id="desc">Return to Steve's personal website.</desc>
+<rect x="3" y="3" width="1032" height="340" rx="38" fill="#121116" stroke="#34313b" stroke-width="6"/>
+<circle cx="161" cy="173" r="94" fill="#1c1925" stroke="#a98bff" stroke-width="7"/>
+<path d="M199 112c-15-12-32-17-54-17-40 0-65 23-65 54 0 29 20 42 57 49 25 5 33 10 33 21 0 11-11 19-29 19-22 0-40-8-59-22l-21 31c21 18 50 28 79 28 42 0 70-22 70-58 0-31-21-43-60-52-23-5-31-10-31-20 0-9 9-16 24-16 18 0 34 6 48 18Z" fill="#f7f3ff" transform="translate(10 -10) scale(.95)"/>
+<text x="335" y="132" fill="#aaa4b4" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" letter-spacing="2">MORE PROJECTS</text>
+<text x="335" y="222" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="700">Steve's Website</text>
+</svg>
