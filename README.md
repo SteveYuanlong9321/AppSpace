@@ -8,7 +8,7 @@ AppSpace 是一个面向 Android 的多来源应用发现与管理应用，目�
 
 AppSpace 1.0 正在准备公开发布。当前开发版本已接入 F-Droid、GitHub Releases、华为 AppGallery、vivo 应用商店和 Uptodown；不同来源的搜索覆盖率、元数据与安装行为仍需要按设备和应用逐项验证。三星 Galaxy Store 已从项目中移除。
 
-官网源码、GitHub Pages 工作流、Android CI 工作流和项目上传脚本已经提交。**完整 Android Studio 工程与正式 APK 尚未上传/发布**；请不要将准备工作流视为已通过构建或正式发布。
+官网源码与 GitHub Pages 工作流已提交。完整 Android Studio 工程现已按 Gradle 项目结构放入仓库。GitHub Releases 中已有 AppSpace 1.0 的 APK 草稿资产，但 Release 仍未正式发布。Android 构建尚未验证成功；由于之前的工作流在 Android SDK 初始化阶段失败，自动触发已暂时暂停，修复 SDK 配置后再手动运行构建检查。
 
 ## 核心目标
 
@@ -49,7 +49,7 @@ AppSpace 的 Android 安装能力可能使用 Android 系统安装界面，也�
 - [网站部署工作流](.github/workflows/pages.yml)
 - [Android 构建检查工作流](.github/workflows/android-ci.yml)
 
-仓库最初只有 README。请从包含 `settings.gradle.kts` 和 `app/` 目录的完整 Android Studio 项目根目录运行上传脚本。脚本会保留官网文件，并排除本机配置、签名密钥与构建产物；它会在推送前列出待提交文件并请求确认。
+Android 源码按标准 Gradle 结构存放：应用代码在 `app/src/main/java/com/example/appspace/`，资源在 `app/src/main/res/`，模块构建配置在 `app/build.gradle.kts`。更新源码时请不要提交 `local.properties`、签名密钥或本机生成的构建产物。当前仓库结构已整理，但尚未通过干净环境构建验证。
 
 ## 反馈
 
