@@ -1,0 +1,18 @@
+AppSpace brings multiple third-party Android app catalogs into one search interface.
+
+Features:
+* Search F-Droid, GitHub Releases, Huawei AppGallery, vivo App Store, and Uptodown
+* Rank results by relevance when source metadata allows it
+* View app details and available version information
+* Compare available download sources for matching apps
+* Download APKs and use Android's installation flow
+* No AppSpace account or sign-in required
+
+Important notes:
+* Catalog availability and download links are controlled by third-party services and may change.
+* Search results do not guarantee that a working APK is available.
+* Before installing an APK, verify the app name, developer, package name, and download source.
+* Downloads from outside F-Droid have not been checked or built by F-Droid. Use care when choosing external sources.
+* The optional Shizuku-assisted installation flow is experimental and requires separate setup and authorization.
+
+AppSpace currently uses F-Droid as one of its search sources. This does not mean AppSpace itself is already included in the official F-Droid repository.
