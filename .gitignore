@@ -1,0 +1,27 @@
+# Local Android/Gradle configuration
+local.properties
+key.properties
+secrets.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+
+# Build output and IDE state
+.gradle/
+.idea/
+.kotlin/
+**/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.iml
+
+# Packaged binaries should be released through GitHub Releases, not source control
+*.apk
+*.aab
+*.apks
+
+# Local upload helper; never commit it to the app source repository
+.upload-helper/
