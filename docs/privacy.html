@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0a10">
+  <meta name="description" content="AppSpace · 应用空间隐私政策">
+  <meta name="site-build" content="2026-10-21-privacy-01">
+  <title>AppSpace · 隐私政策</title>
+  <link rel="icon" type="image/webp" href="./assets/appspace-icon.webp?v=1.0.8">
+  <link rel="stylesheet" href="./style.css?v=1.0.3">
+  <style>
+    .privacy-page { width: min(820px, 100%); margin: 0 auto; padding: 54px 0 80px; }
+    .privacy-page h1 { margin: 0 0 12px; font-size: clamp(38px, 7vw, 60px); letter-spacing: -0.055em; }
+    .privacy-page .updated { color: #8d8698; font-size: 13px; margin-bottom: 42px; }
+    .privacy-section { margin-top: 32px; }
+    .privacy-section h2 { margin: 0 0 12px; font-size: 20px; }
+    .privacy-section p, .privacy-section li { color: #b4aebe; font-size: 15px; line-height: 1.8; }
+    .privacy-section ul { margin: 10px 0 0 20px; padding: 0; }
+    .privacy-section a { color: #c4a7ff; text-decoration: underline; text-underline-offset: 3px; }
+    .privacy-back { display: inline-flex; margin-bottom: 34px; color: #aaa1b6; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class="site">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="AppSpace 首页">AppSpace</a>
+      <span class="version">1.0</span>
+    </header>
+
+    <section class="privacy-page">
+      <a class="privacy-back" href="./index.html">← 返回 AppSpace</a>
+
+      <h1>隐私政策</h1>
+      <div class="updated">最后更新：2026 年 10 月 21 日</div>
+
+      <div class="privacy-section">
+        <h2>1. 概述</h2>
+        <p>
+          AppSpace 是一款面向 Android 的多来源应用发现与管理工具。应用不要求用户注册或登录 AppSpace 账户。
+          本政策说明 AppSpace 如何在设备上处理信息，以及在使用第三方应用目录、详情页面和下载服务时会发生哪些网络请求。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>2. 设备本地信息与搜索历史</h2>
+        <p>
+          AppSpace 会在设备本地保存部分应用设置，例如搜索历史记录和界面偏好。搜索历史可在应用设置中关闭或清除。
+          这些本地设置不需要上传到 AppSpace 自有服务器才能使用。
+        </p>
+        <p>
+          应用还提供已安装应用查看功能。为显示该页面，AppSpace 会通过 Android 系统接口在本机读取已安装应用的名称、包名和版本等信息。
+          这些信息用于设备上的展示和操作；当前版本不会将该列表发送到 AppSpace 开发者运营的服务器。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>3. 搜索、详情与第三方应用来源</h2>
+        <p>
+          当你搜索应用、打开应用详情或加载图标和截图时，AppSpace 会向所选来源发送相应请求。
+          请求可能包含搜索关键词、应用名称或包名，以及获取所需元数据的标识信息。
+          支持的来源包括 F-Droid、GitHub Releases、华为应用市场、vivo 应用商店和 Uptodown。
+        </p>
+        <p>
+          这些请求会直接连接相应第三方服务。第三方服务可能收到常规网络连接信息，例如 IP 地址、请求时间、客户端请求头以及其服务运行所需的技术数据，
+          并按照各自的隐私政策处理这些信息。AppSpace 不控制第三方服务的数据处理方式。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>4. 下载与安装</h2>
+        <p>
+          当你选择下载应用时，设备会连接所选来源提供的下载页面或下载服务器。下载的文件并非由 AppSpace 自有服务器托管。
+          实际可用性、下载行为以及第三方服务可能收集的信息，受相应来源的规则与隐私政策约束。
+        </p>
+        <p>
+          安装由 Android 系统安装流程处理。系统可能要求你确认安装、授予“安装未知应用”权限或启用安装通知。
+          请在安装前核对应用名称、开发者、包名和来源，并只安装你信任的应用。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>5. 已安装应用与 Shizuku 辅助功能</h2>
+        <p>
+          AppSpace 的已安装应用页面使用 Android 系统提供的应用信息接口在设备本地读取可启动应用，以便进行本地展示与筛选。
+          AppSpace 不会为了提供该页面而把应用列表发送给 AppSpace 开发者运营的服务器。
+        </p>
+        <p>
+          AppSpace 还包含可选的实验性 Shizuku 辅助安装流程。该功能需要用户自行安装、启动并明确授权 Shizuku。
+          Shizuku 及设备厂商的系统服务可能按各自的实现和政策处理运行所需的技术信息；此功能并非必需，也不保证绕过 Android 或设备厂商的限制。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>6. 第三方服务与数据共享</h2>
+        <p>
+          AppSpace 本身不要求账户，不以出售用户个人信息为目的，也不把用户数据出售给广告商。
+          当前版本的应用依靠第三方应用目录和下载服务提供搜索、详情、截图及下载能力；当你使用这些功能时，相应请求会直接发往所选第三方服务。
+        </p>
+        <p>
+          AppSpace 当前版本没有集成独立的广告分析 SDK 或自有账号追踪服务。但第三方来源、GitHub、Android 系统、Shizuku 或设备厂商服务可能依照各自的政策处理必要的技术信息。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>7. 权限说明</h2>
+        <ul>
+          <li><strong>网络访问：</strong>用于查询应用目录、读取详情和截图，以及获取来源提供的下载内容。</li>
+          <li><strong>查询已安装应用：</strong>用于在设备本地展示已安装应用列表和相关信息。</li>
+          <li><strong>安装应用请求：</strong>用于将所选 APK 交给 Android 系统安装程序处理，安装仍需遵循系统授权与确认流程。</li>
+          <li><strong>通知权限：</strong>用于在适用的 Android 版本上显示用户允许的下载或安装状态通知。</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2>8. 儿童隐私</h2>
+        <p>
+          AppSpace 不以儿童为目标用户，也不要求用户提交姓名、住址或其他身份信息来创建账户。
+          如果监护人对隐私处理有疑问，可通过项目 GitHub Issues 联系开发者。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>9. 联系方式</h2>
+        <p>
+          如对本隐私政策或 AppSpace 的隐私实践有疑问，请通过项目的
+          <a href="https://github.com/SteveYuanlong9321/AppSpace/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+          联系开发者。
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>10. 政策更新</h2>
+        <p>
+          如果 AppSpace 的功能或数据处理方式发生重大变化，我们会更新本页面并调整最后更新时间。
+          请定期查看本页面以了解当前政策。
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>AppSpace · 应用空间</span>
+      <div class="site-footer-links">
+        <a href="https://github.com/SteveYuanlong9321/AppSpace" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/SteveYuanlong9321/AppSpace/issues" target="_blank" rel="noopener noreferrer">Feedback / Issues</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
