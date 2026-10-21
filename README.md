@@ -60,11 +60,13 @@ gradlew.bat assembleDebug
 
 ## 当前发布状态
 
-AppSpace 1.0 的 GitHub Release 目前仍处于草稿状态，正式发布前仍需要完成构建环境验证、设备回归测试、APK 包名与签名核对，并补齐开源许可证。GitHub Actions 之前在 Android SDK 初始化阶段失败，尚未成功运行到项目编译；自动构建暂时改为手动触发，修复环境后再验证。
+AppSpace 1.0 的 GitHub Release 目前仍处于草稿状态，正式发布前仍需要完成构建环境验证、设备回归测试、APK 包名与签名核对，并核查第三方依赖与资源的许可证兼容性。GitHub Actions 之前在 Android SDK 初始化阶段失败，尚未成功运行到项目编译；自动构建暂时改为手动触发，修复环境后再验证。
 
 ## 开源许可证
 
-**本仓库目前尚未添加 `LICENSE` 文件，项目许可证还未确定。** 在许可证正式选定并加入仓库前，请不要假定本项目已按某个特定开源许可证授权。准备公开源码和提交 F-Droid 前，需要先明确项目许可证，并核查第三方依赖各自的许可证兼容性。
+AppSpace 项目代码采用 **Apache License 2.0（Apache-2.0）**，完整许可证条款见仓库根目录的 [`LICENSE`](LICENSE) 文件。
+
+该许可证仅适用于 AppSpace 有权授权的项目内容；第三方依赖、图标及其他资源仍可能受各自的许可证和版权声明约束。提交 F-Droid 前，仍需逐项核查依赖、资源和构建方式是否符合 F-Droid 的政策。
 
 ## 反馈与问题报告
 
@@ -105,4 +107,4 @@ On Windows, use `gradlew.bat assembleDebug`. The project is configured for Andro
 
 ### License and release status
 
-The AppSpace 1.0 GitHub Release is still a draft. Build validation and device testing remain to be completed. A `LICENSE` file has not yet been added, so the project's license is still to be selected before describing the repository as released under a specific open-source license or submitting it to F-Droid.
+The AppSpace 1.0 GitHub Release is still a draft. Build validation and device testing remain to be completed. AppSpace project code is licensed under Apache License 2.0 (Apache-2.0); see [`LICENSE`](LICENSE). Third-party dependency and asset licenses, as well as F-Droid build requirements, still need to be reviewed before submission.
