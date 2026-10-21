@@ -261,6 +261,72 @@ a {
 }
 
 
+.cloud-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: 240px;
+  min-height: 72px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(168, 107, 255, 0.13), rgba(255, 255, 255, 0.035));
+  text-align: left;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.cloud-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(196, 167, 255, 0.38);
+  background: linear-gradient(135deg, rgba(168, 107, 255, 0.19), rgba(255, 255, 255, 0.055));
+}
+
+.cloud-link:active {
+  transform: scale(0.99);
+}
+
+.cloud-link-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #c4a7ff, #8fded7);
+  color: #17121f;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.cloud-link-xunlei .cloud-link-mark {
+  background: linear-gradient(135deg, #a7c8ff, #9ee5e1);
+}
+
+.cloud-link-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.cloud-link-copy strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cloud-link-copy small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.cloud-link-arrow {
+  color: #b7a2d7;
+  font-size: 17px;
+}
+
 @media (max-width: 520px) {
   .site {
     width: min(100% - 24px, 520px);
@@ -298,6 +364,10 @@ a {
 
   .release-link {
     width: min(210px, 100%);
+  }
+
+  .cloud-link {
+    width: min(260px, 100%);
   }
 
   .site-footer {
