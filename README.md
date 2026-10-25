@@ -2,7 +2,7 @@
 
 **AppSpace** 是一款面向 Android 的多来源应用发现与管理工具。它把多个第三方应用目录的搜索结果放到同一个界面中，帮助你查找应用、查看可用信息，并在不同来源之间选择下载渠道。
 
-[![Keep Android Open](https://shields.io)](https://keepandroidopen.org)
+让安卓保持开放！访问：[![Keep Android Open](https://shields.io)](https://keepandroidopen.org)
 
 - **平台：** Android 8.0（API 26）及以上
 - **当前版本：** 1.0
